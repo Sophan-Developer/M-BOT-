@@ -2,27 +2,26 @@ const { MessageEmbed } = require("discord.js")
 
 
 module.exports = {
-  name: "اقتراح",
+  name: "suggest",
   usage: "suggest <message>",
   description: "Send your Suggestion",
   category: "main",
   run: (client, message, args) => {
     
     if(!args.length) {
-      return message.channel.send("الرجاء تقديم الاقتراح")
+      return message.channel.send("Please Give the Suggestion")
     }
     
     let channel = message.guild.channels.cache.find((x) => (x.name === "suggestion" || x.name === "suggestions"))
     
     
     if(!channel) {
-      return message.channel.send("لا توجد قناة بالاسم - اقتراحات")
+      return message.channel.send("there is no channel with name - suggestions")
     }
                                                     
     
     let embed = new MessageEmbed()
-    .setAuthor("اقتراح من: " 
-    + message.author.tag, message.author.avatarURL())
+    .setAuthor("SUGGESTION: " + message.author.tag, message.author.avatarURL())
     .setThumbnail(message.author.avatarURL())
     .setColor("#ff2050")
     .setDescription(args.join(" "))
@@ -36,7 +35,7 @@ module.exports = {
     
 
     
-    message.channel.send("تم أرسال اقتراحك إلى روم الاقتراحات")
+    message.channel.send("Sended Your Suggestion to " + channel)
     
   }
 }
