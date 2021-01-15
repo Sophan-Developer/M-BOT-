@@ -2,8 +2,8 @@ const db = require("quick.db")
 
 module.exports = {
   name: "resetwarns",
-  category: "moderation",
   aliases: ["rwarns"],
+  category: "moderation",
   usage: "rwarns <@user>",
   description: "Reset warnings of mentioned person",
   run: async (client, message, args) => {
