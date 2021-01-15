@@ -46,7 +46,7 @@ client.on("message", async message => {
         command.run(client, message, args);
 });
 
-var statut = ["Follow Ali Lion","Follow abo111anas","Follow dbo9h","Follow Luffy_63","Follow A_B_O_A_L_I"];
+var statut = ["/help | MBOT","MBOT | 41"];
 
 var second  = 10; 
 client.on("ready", () =>{
