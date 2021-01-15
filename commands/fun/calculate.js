@@ -4,6 +4,7 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: "calculate",
+    category: "Fun",
     description: "Get the answer to a math problem",
 
 
