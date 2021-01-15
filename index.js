@@ -66,7 +66,7 @@ client.on('message', message => {
             السنة = currentTime.getFullYear(),
             الشهر = currentTime.getMonth() + 1,
             اليوم = currentTime.getDate();
-        message.channel.send( "التاريخ : " + اليوم + "-" + الشهر + "-" +السنة)
+        message.channel.send( "Date : " + day + "-" + month + "-" + year)
     }
   
   });
