@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js')
 const os = require('os')
 module.exports = {
     name: "mbot",
-    category: "bot",
+    category: "M-BOT-INFOS",
     run: async (client, message, args) => {
         const embed = new MessageEmbed()
             .setThumbnail(client.user.displayAvatarURL())
