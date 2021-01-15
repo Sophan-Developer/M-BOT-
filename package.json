@@ -27,7 +27,8 @@
     "ytdl-core-discord": "^1.2.4",
     "ytsr": "^3.2.1",
     "random-puppy": "^1.1.0",
-    "mathjs": "^8.1.0"
+    "mathjs": "^8.1.0",
+    "axios": "^0.21.1"
   },
   "engines": {
     "node": "12.x"
