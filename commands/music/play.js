@@ -78,7 +78,7 @@ ${song.duration}
         
         `
         )
-        .setFooter(`PARAS GAMING 🇮🇳`);
+        .setFooter(`M-BOT`);
       return message.channel.send(thing);
     }
 
@@ -125,7 +125,7 @@ ${song.duration}
 
         .setImage(song.img)
         .setColor("GREEN")
-        .setFooter(`PARAS GAMING🇮🇳`);
+        .setFooter(`M-BOT`);
       queue.textChannel.send(thing);
     };
 
