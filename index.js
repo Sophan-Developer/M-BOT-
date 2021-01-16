@@ -46,7 +46,7 @@ client.on("message", async message => {
         command.run(client, message, args);
 });
 
-var statut = ["/help | M-BOT","M-BOT | m-bot0.8b.io"];
+var statut = ["/help | M-BOT","M-BOT | m-bot.tk"];
 
 var second  = 10; 
 client.on("ready", () =>{
