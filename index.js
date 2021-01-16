@@ -46,7 +46,7 @@ client.on("message", async message => {
         command.run(client, message, args);
 });
 
-var statut = ["/help | MBOT","MBOT | 41"];
+var statut = ["/help | MBOT","MBOT | m-bot0.8b.io"];
 
 var second  = 10; 
 client.on("ready", () =>{
@@ -70,7 +70,7 @@ client.on('message', message => {
     }
   
   });
-
+ 
  
   client.on('message', black=> { 
     if (black.content.startsWith(`<@!${client.user.id}>`)) { 
