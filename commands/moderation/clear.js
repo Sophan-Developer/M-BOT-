@@ -1,38 +1,32 @@
+const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: "clear",
-    aliases: ["purge", "nuke"],
     category: "moderation",
-    description: "Clears the chat",
     run: async (client, message, args) => {
-        if (message.deletable) {
-            message.delete();
-        }
-    
-        // Member doesn't have permissions
-        if (!message.member.hasPermission("MANAGE_MESSAGES")) {
-            return message.reply("You can't delete messages....").then(m => m.delete(5000));
-        }
-
-        // Check if args[0] is a number
-        if (isNaN(args[0]) || parseInt(args[0]) <= 0) {
-            return message.reply("Yeah.... That's not a numer? I also can't delete 0 messages by the way.").then(m => m.delete(5000));
-        }
-
-        // Maybe the bot can't delete messages
-        if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) {
-            return message.reply("Sorryy... I can't delete messages.").then(m => m.delete(5000));
+        if (!message.member.permissions.has("MANAGE_MESSAGES")) // sets the permission
+            return message.channel.send(
+                `You do not have correct permissions to do this action, ${message.author.username}` // returns this message to user with no perms
+            );
+        if (!args[0]) {
+            return message.channel.send(`Please enter a amount 1 to 100`)
         }
 
         let deleteAmount;
 
-        if (parseInt(args[0]) > 100) {
+        if (parseInt(args[0]) > 100 ) {
             deleteAmount = 100;
         } else {
             deleteAmount = parseInt(args[0]);
         }
 
-        message.channel.bulkDelete(deleteAmount, true)
-            .then(deleted => message.channel.send(`I deleted \`${deleted.size}\` messages.`))
-            .catch(err => message.reply(`Something went wrong... ${err}`));
+        await message.channel.bulkDelete(deleteAmount, true);
+
+        const embed = new MessageEmbed()
+            .setTitle(`${message.author.username}`)
+            .setThumbnail(message.author.displayAvatarURL())
+            .setDescription(`successfully deleted ${deleteAmount}`)
+            .setFooter(message.author.username, message.author.displayAvatarURL())
+            .setColor('#f2f2f2')
+        await message.channel.send(embed)
     }
 }
